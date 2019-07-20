@@ -17,51 +17,7 @@ router.post('/addAuthor', (req, res) => {
     res.json(err);
   });
   });
-  //datanın geldiğinden emin olmak için -- endpoint router la yapıldı
-
-/*  router.get('/getBooks/:author_id',(req,res)=> {
-      const promise = Author.aggregate([
-        {
-          $match: {
-            '_id': mongoose.Types.ObjectId(req.params.author_id);
-          }
-          },
-
-        {
-            $lookup: {
-              from: 'book',
-              localField: '_id',
-              foreignField:'author_id',
-              as: 'books'
-            }
-            },
-
-          {
-              $unwind:{
-                path:'books',
-              }
-              },
-
-          {
-              $group:{
-              _id: {
-                  _id: '$_id',
-                  name: '$name',
-                  surname: '$surname',
-                  bio: 'bio',
-              },
-              books:{
-                $push: '$books'
-              }
-              }
-              }
-      ]);
-      promise.then((data)=> {
-          res.json(data)
-      }).catch((err)=> {
-          res.json(err)
-      })
-}); */
+  //datanın geldiğinden emin olmak için -- endpoint router la yapıldı.
 
 
 router.get('/getBooks/:author_id', (req, res) => {
