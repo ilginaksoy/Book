@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = () => {
 
-    mongoose.connect("mongodb://localhost:27017/DBBOOK", {
+    mongoose.connect("mongodb://Ilgin:ilgin123*@ds351987.mlab.com:51987/heroku_bfsx8q7x", {
         useNewUrlParser: true
       })
       mongoose.connection.on('open',()=> {

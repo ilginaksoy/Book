@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use('/api/book', book); //book endpoint ine yönlendiriyor
 app.use('/api/author', author); //book endpoint ine yönlendiriyor
 
-const port = 3005;
+var port = process.env.PORT || 3000;
 
 
 app.get('/',(req,res)=> {
