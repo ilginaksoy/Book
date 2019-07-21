@@ -1,6 +1,7 @@
-const mongoose = require("mongoose"); //mongodb için veritabı işlemilerini sağlayan kütüphane
+const mongoose = require("mongoose"); //the library which ensure the mongodb processes
 const Schema = mongoose.Schema;
 
+//author informations - for db
 const author = new Schema({
   name: String,
   surname: String,
@@ -11,4 +12,4 @@ const author = new Schema({
   }
 });
 
-module.exports = mongoose.model('author', author); 
+module.exports = mongoose.model('author', author);

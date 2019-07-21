@@ -1,25 +1,25 @@
 const express = require("express");
-const router = express.Router(); //express içerisindeki router
+const router = express.Router();
 const Author = require("../models/author");
 const mongoose = require("mongoose");
 
 router.get('/', (req,res) => {
-  console.log('api/author sayfası');
-  res.json({status:1}); //web in verdiği response
+  console.log('api/author page');
+  res.json({status:1}); //the response message
 });
 
+//This is addAuthor endpoint
 router.post('/addAuthor', (req, res) => {
-  const author = new Author(req.body); //postman'deb gelecek geliyor
+  const author = new Author(req.body); //from postman
   const promise = author.save();
   promise.then((data) => {
     res.json(data);
   }).catch((err) => {
     res.json(err);
   });
-  });
-  //datanın geldiğinden emin olmak için -- endpoint router la yapıldı.
+}); //to make sure that data came
 
-
+//this is the endpoint which returns books by author names
 router.get('/getBooks/:author_id', (req, res) => {
 	const promise = Author.aggregate([
 		{

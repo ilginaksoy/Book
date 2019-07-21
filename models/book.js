@@ -1,6 +1,7 @@
-const mongoose = require("mongoose"); //mongodb için veritabı işlemilerini sağlayan kütüphane
+const mongoose = require("mongoose"); //the library which ensure the mongodb processes
 const Schema = mongoose.Schema;
 
+//book informations - for db
 const book = new Schema({
   book_name: String,
   author_id: Schema.Types.ObjectId,
@@ -11,4 +12,4 @@ const book = new Schema({
   category: String
 });
 
-module.exports = mongoose.model('Book', book); //Book adında book şeklinde veritabanı
+module.exports = mongoose.model('Book', book); //db name: Book
